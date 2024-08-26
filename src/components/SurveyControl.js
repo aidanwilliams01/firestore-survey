@@ -110,16 +110,21 @@ function SurveyControl() {
     setSelectedSurvey(null);
   }
 
+  const handleAddingSurveyAnswers = async (newAnswerData) => {
+    await addDoc(collection(db, "answers"), newAnswerData);
+    setSelectedSurvey(null);
+  }
+
   let currentlyVisibleState = null;
   let buttonText = null;
 
-  // if (auth.currentUser == null) {
-    // return (
-    //   <React.Fragment>
-    //     <h1>You must be signed in to access the queue.</h1>
-    //   </React.Fragment>
-    // )
-  // } else if (auth.currentUser != null) {
+  if (auth.currentUser == null) {
+    return (
+      <React.Fragment>
+        <h1>You must be signed in to access the queue.</h1>
+      </React.Fragment>
+    )
+  } else if (auth.currentUser != null) {
       if(error) {
         currentlyVisibleState = <p>There was an error: {error}</p>
       } else if (editing) {
@@ -133,7 +138,8 @@ function SurveyControl() {
           <SurveyDetail
             survey={selectedSurvey}
             onClickingDelete={handleDeletingSurvey}
-            onClickingEdit = {handleEditClick} />
+            onClickingEdit = {handleEditClick}
+            onNewAnswersCreation = {handleAddingSurveyAnswers} />
           buttonText = "return to Survey List";
       } else if (formVisibleOnPage) {
         currentlyVisibleState = 
@@ -155,6 +161,7 @@ function SurveyControl() {
         </React.Fragment>
       );
     }
+  }
 
 
 export default SurveyControl;
