@@ -14,7 +14,6 @@ function SurveyList(props){
           question1={survey.question1}
           question2={survey.question2}
           question3={survey.question3}
-          // formattedWaitTime={survey.formattedWaitTime}
           id={survey.id}
           key={survey.id}/>
       )}
@@ -23,7 +22,7 @@ function SurveyList(props){
 }
 
 SurveyList.propTypes = {
-  surveyList: PropTypes.object,
+  surveyList: PropTypes.array,
   onSurveySelection: PropTypes.func
 };
 

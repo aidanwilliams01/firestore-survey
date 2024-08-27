@@ -3,10 +3,6 @@ import NewSurveyForm from './NewSurveyForm.js';
 import SurveyList from './SurveyList';
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm.js';
-// import { connect } from 'react-redux';
-// import PropTypes from "prop-types";
-// import * as a from '../actions/index.js';
-// import { formatDistanceToNow } from 'date-fns';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db, auth } from '../firebase.js';
 
@@ -41,38 +37,6 @@ function SurveyControl() {
 
     return () => unSubscribe();
   }, []);
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     // formVisibleOnPage: false,
-  //     selectedSurvey: null,
-  //     editing: false
-  //   };
-  // }
-
-  // const componentDidMount = () => {
-  //   this.waitTimeUpdateTimer = setInterval(() =>
-  //     this.updateSurveyElapsedWaitTime(),
-  //   60000
-  //   );
-  // }
-
-  // const componentWillUnmount = () => {
-  //   console.log("component unmounted!");
-  //   clearInterval(this.waitTimeUpdateTimer);
-  // }
-
-  // const updateSurveyElapsedWaitTime = () => {
-  //   const { dispatch } = this.props;
-  //   Object.values(this.props.mainSurveyList).forEach(survey => {
-  //     const newFormattedWaitTime = formatDistanceToNow(survey.timeOpen, {
-  //       addSuffix: true
-  //     });
-  //     const action = a.updateTime(survey.id, newFormattedWaitTime);
-  //     dispatch(action);
-  //   });
-  // }
 
   const handleClick = () => {
     if (selectedSurvey != null) {
@@ -140,7 +104,7 @@ function SurveyControl() {
             onClickingDelete={handleDeletingSurvey}
             onClickingEdit = {handleEditClick}
             onNewAnswersCreation = {handleAddingSurveyAnswers} />
-          buttonText = "return to Survey List";
+          buttonText = "Return to Survey List";
       } else if (formVisibleOnPage) {
         currentlyVisibleState = 
           <NewSurveyForm 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Header(){
   return (
     <React.Fragment>
-      <h1>Placeholder</h1>
+      <h1>Surveys</h1>
       <ul>
         <li>
           <Link to="/">Home</Link>

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
-// import { formatDistanceToNow } from 'date-fns';
 
 function NewSurveyForm(props){
 
@@ -12,10 +11,6 @@ function NewSurveyForm(props){
       question1: event.target.question1.value,
       question2: event.target.question2.value,
       question3: event.target.question3.value,
-      // timeOpen: new Date(),
-      // formattedWaitTime: formatDistanceToNow(new Date(), {
-      //   addSuffix: true
-      // })
     });
   }
 

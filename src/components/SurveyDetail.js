@@ -11,10 +11,6 @@ function SurveyDetail(props){
       response2: event.target.response2.value,
       response3: event.target.response3.value,
       surveyid: event.target.surveyid.value,
-      // timeOpen: new Date(),
-      // formattedWaitTime: formatDistanceToNow(new Date(), {
-      //   addSuffix: true
-      // })
     });
   }
 
@@ -23,11 +19,11 @@ function SurveyDetail(props){
       <form onSubmit={handleNewAnswerFormSubmission}>
         <h3>{survey.title}</h3>
         <p><em>{survey.question1}</em></p>
-        <input type="text" name="response1" />
+        <input type="text" name="response1" placeholder="response" />
         <p><em>{survey.question2}</em></p>
-        <input  type="text" name="response2" />
+        <input  type="text" name="response2" placeholder="response" />
         <p><em>{survey.question3}</em></p>
-        <input  type="text" name="response3" />
+        <input  type="text" name="response3" placeholder="response" />
         <br />
         <input type="hidden" name="surveyid" value={survey.id} />
         <button>Submit Answers</button>

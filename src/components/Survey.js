@@ -6,10 +6,9 @@ function Survey(props){
     <React.Fragment>
       <div onClick = {() => props.whenSurveyClicked(props.id)}>
         <h3>{props.title}</h3>
-        <p><em>{props.question1}</em></p>
-        <p><em>{props.question2}</em></p>
-        <p><em>{props.question3}</em></p>
-        {/* <p><em>{props.formattedWaitTime}</em></p> */}
+        <p>Question 1: <em>{props.question1}</em></p>
+        <p>Question 2: <em>{props.question2}</em></p>
+        <p>Question 3: <em>{props.question3}</em></p>
         <hr/>
       </div>
     </React.Fragment>
@@ -22,8 +21,6 @@ Survey.propTypes = {
   question2: PropTypes.string,
   question3: PropTypes.string,
   id: PropTypes.string,
-  // whenSurveyClicked: PropTypes.func,
-  // formattedWaitTime: PropTypes.string
 };
 
 export default Survey;

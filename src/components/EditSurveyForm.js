@@ -13,8 +13,6 @@ function EditSurveyForm (props) {
       question2: event.target.question2.value,
       question3: event.target.question3.value,
       id: survey.id,
-      // timeOpen: survey.timeOpen,
-      // formattedWaitTime: survey.formattedWaitTime
     });
   }
 
